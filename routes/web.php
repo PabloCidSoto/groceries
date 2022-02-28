@@ -33,6 +33,11 @@ Route::get('/admin/products/create', [ProductController::class, 'create'])->name
 
 Route::post('/admin/products/store', [ProductController::class, 'store'])->name('save_product');
 
+Route::get('/admin/products/edit/{id}', [ProductController::class, 'edit'])->name('edit_product');
+
+Route::post('/admin/products/update/{id}', [ProductController::class, 'update'])->name('update_product');
+
+Route::get('/admin/products/delete/{id}', [ProductController::class, 'destroy'])->name('delete_product');
 
 
 Route::get('/hola1', function(){
