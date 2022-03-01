@@ -65,6 +65,7 @@
                     <th scope="col">Quantity</th>
                     <th scope="col">Discount</th>
                     <th scope="col">Category</th>
+                    <th scope="col">Comments</th>
                     <th scope="col">Actions</th>
                   </tr>
                 </thead>
@@ -77,7 +78,8 @@
                             <td>{{ $product->old_price }}</td>
                             <td>{{ $product->quantity }}</td>
                             <td>{{ $product->discount }}</td>
-                            <td>{{ $product->id_category }}</td>
+                            <td>{{ $product->category->name }}</td>
+                            <td>{{ count($product->comments) }}</td>
                             <td>
                                 <a href="{{ route('edit_product', $product->id_product) }}"><button type="button" class="btn btn-warning mb-3">Edit</button></a>
                                 <a href="{{ route('delete_product', $product->id_product) }}"><button type="button" class="btn btn-danger">Delete</button></a>

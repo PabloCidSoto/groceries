@@ -84,6 +84,72 @@
             </div>
         </div>
     </div>
+    <div class="container">
+        @if(session()->get('success'))
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ session()->get('success') }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endif
+        <h2 class="title">Send a Comment</h2>
+        <form class="form-horizontal" action="{{ route('store_comment', $product->id_product) }}"  method="post">
+            @csrf
+            <div class="form-group row mt-3">
+                <div class="col-md-12 mb-3">
+                    <input class="form-control" type="text" required="" name="commenter" placeholder="Name" value="">
+                </div>
+                <div class="col-md-12 mb-3">
+                    <input class="form-control" type="text" required="" name="email" placeholder="email" value="">
+                </div>
+                <div class="col-md-12">
+                    <textarea class="form-control" type="textArea" name="comment" required="" placeholder="comment" ></textarea>
+                </div>
+            </div>
+            <div class="form-group row text-center mt-4">
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary btn-block text-uppercase">Register</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="container">
+        @if (count($product->comments)>0)
+        <h2 class="title">Comments</h2>
+
+        @foreach ($product->comments as $comment)
+        <p>
+            <strong>{{ $comment->commenter }}</strong> {{ $comment->email }} Commented at: {{ $comment->created_at }} <br>
+            {{ $comment->comment }}
+        </p>
+        
+
+            
+        @endforeach
+        {{-- id
+            comment
+            commenter
+            email
+            product_id
+            created_at
+            updated_at 
+             --}}
+        @else
+        <h2 class="title">0 comments</h2>
+        
+
+        @endif
+    </div>
+        
+
+        
 
     <section id="related-product">
         <div class="container">

@@ -39,6 +39,9 @@ Route::post('/admin/products/update/{id}', [ProductController::class, 'update'])
 
 Route::get('/admin/products/delete/{id}', [ProductController::class, 'destroy'])->name('delete_product');
 
+Route::post('/product/detail/{id}', [SiteController::class, 'storeComment'])->name('store_comment');
+
+
 
 Route::get('/hola1', function(){
     return view('hello2');
