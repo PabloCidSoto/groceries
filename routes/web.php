@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\HelloController;
+use App\Http\Controllers\JsonController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
@@ -41,7 +42,10 @@ Route::get('/admin/products/delete/{id}', [ProductController::class, 'destroy'])
 
 Route::post('/product/detail/{id}', [SiteController::class, 'storeComment'])->name('store_comment');
 
+Route::get('/json1', [JsonController::class, 'json1'])->name('json1');
 
+Route::get('/json_products', [JsonController::class, 'products'])->name('json_products');
+Route::get('/products_list', [JsonController::class, 'products_list'])->name('products_list');
 
 Route::get('/hola1', function(){
     return view('hello2');
