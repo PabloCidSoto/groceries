@@ -19,6 +19,13 @@ class JsonController extends Controller
         return response()->json($products);
     }
 
+    public function productsDataTable(){
+        $products = Product::all();
+
+        
+        return response()->json(['data' => $products]);
+    }
+
     public function products_list(){
         return view('product_list');
     }

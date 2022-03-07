@@ -46,6 +46,7 @@ Route::get('/json1', [JsonController::class, 'json1'])->name('json1');
 
 Route::get('/json_products', [JsonController::class, 'products'])->name('json_products');
 Route::get('/products_list', [JsonController::class, 'products_list'])->name('products_list');
+Route::get('/products_list_datatable', [JsonController::class, 'productsDataTable'])->name('productsDataTable');
 
 Route::get('/hola1', function(){
     return view('hello2');

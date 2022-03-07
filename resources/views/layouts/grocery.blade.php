@@ -15,7 +15,8 @@
     <link rel="stylesheet" type="text/css" media="all" href="{{ asset('assets/packages/cloudzoom/cloudzoom.css') }}">
     <link rel="stylesheet" type="text/css" media="all" href="{{ asset('assets/packages/thumbelina/thumbelina.css') }}">
     <link rel="stylesheet" type="text/css" media="all" href="{{ asset('assets/packages/bootstrap-touchspin/bootstrap-touchspin.css') }}">
-    <link rel="stylesheet" type="text/css" media="all" href="{{ asset('assets/css/theme.css') }}"> 
+    <link rel="stylesheet" type="text/css" media="all" href="{{ asset('assets/css/theme.css') }}">
+    @yield('css') 
 
 </head>
 <body>
@@ -214,7 +215,7 @@
     <script type="text/javascript" src="{{ asset('assets/packages/cloudzoom/cloudzoom.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/packages/thumbelina/thumbelina.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/packages/bootstrap-touchspin/bootstrap-touchspin.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/theme.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/myscript.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/theme.js') }}"></script> 
+    @yield('js')
 </body>
 </html>
